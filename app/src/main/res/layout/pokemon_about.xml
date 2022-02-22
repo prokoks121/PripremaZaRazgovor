@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokemonAbout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/species"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Species"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toTopOf="@+id/pokemonAbout"
+        />
+
+    <TextView
+        android:id="@+id/species_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="species"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/species"
+        app:layout_constraintTop_toTopOf="@+id/pokemonAbout"
+        />
+
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/species"
+        />
+
+    <TextView
+        android:id="@+id/height_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70 cm"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/height"
+        app:layout_constraintTop_toBottomOf="@+id/species"
+        />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/height"
+        />
+
+    <TextView
+        android:id="@+id/weight_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6.9 kg"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/weight"
+        app:layout_constraintTop_toBottomOf="@+id/height"
+        />
+
+    <TextView
+        android:id="@+id/abilities"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Abilities"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/weight"
+        />
+
+    <TextView
+        android:id="@+id/abilities_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overgrouw"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/weight"
+        app:layout_constraintTop_toBottomOf="@+id/weight"
+        />
+
+
+    <TextView
+        android:id="@+id/breeding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breeding"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/abilities"
+        />
+
+
+    <TextView
+        android:id="@+id/gander"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Gander"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/breeding"
+        />
+
+    <TextView
+        android:id="@+id/gander_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="87.5%"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/gander"
+        app:layout_constraintTop_toBottomOf="@+id/breeding"
+        />
+
+
+    <TextView
+        android:id="@+id/egg"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Egg Groups"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/gander"
+        />
+
+    <TextView
+        android:id="@+id/egg_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monster"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/egg"
+        app:layout_constraintTop_toBottomOf="@+id/gander"
+        />
+
+    <TextView
+        android:id="@+id/egg_cycle"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Egg Cycle"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/egg"
+        />
+
+    <TextView
+        android:id="@+id/egg_cycle_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grass"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/egg_cycle"
+        app:layout_constraintTop_toBottomOf="@+id/egg"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

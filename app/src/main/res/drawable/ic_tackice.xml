@@ -1,0 +1,18 @@
+<vector android:height="39.215687dp" android:viewportHeight="50"
+    android:viewportWidth="102" android:width="80dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M5,5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M28,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M5,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M28,5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M51,45m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M74,45m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M5,45m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M28,45m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M51,5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M74,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M51,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M74,5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M97,45m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M97,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <path android:fillAlpha="0.2" android:fillColor="#ffffff" android:pathData="M97,5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+</vector>

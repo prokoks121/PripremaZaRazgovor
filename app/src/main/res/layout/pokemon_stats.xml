@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokemonAbout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="25dp"
+    android:paddingEnd="25dp">
+
+    <TextView
+        android:id="@+id/hp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="HP"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toTopOf="@+id/pokemonAbout" />
+
+    <TextView
+        android:id="@+id/hp_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:text="999"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/hp"
+        app:layout_constraintTop_toTopOf="@+id/pokemonAbout" />
+
+    <ProgressBar
+        android:id="@+id/progress_hp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/hp_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/hp_data"
+        app:layout_constraintTop_toTopOf="@+id/hp_data" />
+
+
+    <TextView
+        android:id="@+id/attack"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Attack"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/hp" />
+
+    <TextView
+        android:id="@+id/attack_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="80"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/attack"
+        app:layout_constraintTop_toBottomOf="@+id/hp" />
+
+    <ProgressBar
+        android:id="@+id/progress_attack"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/attack_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/attack_data"
+        app:layout_constraintTop_toTopOf="@+id/attack_data" />
+
+    <TextView
+        android:id="@+id/defense"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Defense"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/attack" />
+
+    <TextView
+        android:id="@+id/defense_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="60"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/defense"
+        app:layout_constraintTop_toBottomOf="@+id/attack" />
+
+    <ProgressBar
+        android:id="@+id/progress_defense"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/defense_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/defense_data"
+        app:layout_constraintTop_toTopOf="@+id/defense_data" />
+    <TextView
+        android:id="@+id/atk"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Sp. Atk"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/defense" />
+
+    <TextView
+        android:id="@+id/atk_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="40"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/defense"
+        app:layout_constraintTop_toBottomOf="@+id/defense" />
+
+    <ProgressBar
+        android:id="@+id/progress_atk"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/atk_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/atk_data"
+        app:layout_constraintTop_toTopOf="@+id/atk_data" />
+    <TextView
+        android:id="@+id/def"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Sp. Def"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/atk" />
+
+    <TextView
+        android:id="@+id/def_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="80"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/def"
+        app:layout_constraintTop_toBottomOf="@+id/atk" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_def"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/def_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/def_data"
+        app:layout_constraintTop_toTopOf="@+id/def_data" />
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Speed"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/def" />
+
+    <TextView
+        android:id="@+id/speed_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="20"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/speed"
+        app:layout_constraintTop_toBottomOf="@+id/def" />
+
+    <ProgressBar
+        android:id="@+id/progress_speed"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintBottom_toBottomOf="@+id/speed_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/speed_data"
+        app:layout_constraintTop_toTopOf="@+id/speed_data" />
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Total"
+        android:textColor="#7A7A7A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonAbout"
+        app:layout_constraintTop_toBottomOf="@+id/speed" />
+
+    <TextView
+        android:id="@+id/total_data"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="317"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/total"
+        app:layout_constraintTop_toBottomOf="@+id/speed" />
+    <ProgressBar
+        android:id="@+id/progress_total"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:indeterminate="false"
+        android:max="1000"
+        android:progress="200"
+        app:layout_constraintBottom_toBottomOf="@+id/total_data"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonAbout"
+        app:layout_constraintStart_toEndOf="@+id/total_data"
+        app:layout_constraintTop_toTopOf="@+id/total_data" />
+</androidx.constraintlayout.widget.ConstraintLayout>
