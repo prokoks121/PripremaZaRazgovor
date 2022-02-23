@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val retrofit: Connect) {
 
-   suspend fun getPokemonsNamedApiList(
+   suspend fun getPokemonNamedApiList(
         offset:Int,
         limit:Int
     ):  NamedApiResourceList? {
@@ -34,10 +34,15 @@ class Repository @Inject constructor(private val retrofit: Connect) {
     }
 
 
-    fun getPokemonSpecies(
+    suspend fun getPokemonSpecies(
         id:Int
-    ):Call<PokemonSpecies>{
-        return retrofit.retrofitApiInterface.getPokemonSpecies(id)
+    ):PokemonSpecies?{
+
+        val data = retrofit.retrofitApiInterface.getPokemonSpecies(id).execute()
+        if (data.isSuccessful){
+            return  data.body()
+        }
+        return null
     }
 
     private fun urlToId(url: String): Int {

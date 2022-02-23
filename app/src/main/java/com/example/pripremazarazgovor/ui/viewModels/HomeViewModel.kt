@@ -26,7 +26,7 @@ class HomeViewModel @Inject constructor(
 
         CoroutineScope(Dispatchers.IO).launch {
             val pokemons = listOfPokemons.value ?: arrayListOf()
-            val namedApiResourceList = repository.getPokemonsNamedApiList(offset,limit)
+            val namedApiResourceList = repository.getPokemonNamedApiList(offset,limit)
             namedApiResourceList?.let { apiResourceList ->
                 apiResourceList.results.forEach {
                     val pokemon = repository.getPokemon(urlToId(it.url))

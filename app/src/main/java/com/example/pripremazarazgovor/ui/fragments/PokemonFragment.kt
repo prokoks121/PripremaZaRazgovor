@@ -37,7 +37,7 @@ class PokemonFragment : Fragment() {
         recyclerView.setController(epoxyController)
 
         viewModel.pokemonId = 5
-       // viewModel.sendRequests()
+        viewModel.sendRequests()
         viewModel.pokemon.observe(viewLifecycleOwner, Observer { pokemon->
             viewModel.pokemonSpecies.value?.let { pokemonSpecies->
                 epoxyController.setValues(pokemon = pokemon, pokemonSpecies = pokemonSpecies)
