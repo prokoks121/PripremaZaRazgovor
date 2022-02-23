@@ -24,7 +24,7 @@ class PokemonViewModel @Inject constructor(val repository: Repository): ViewMode
 
     var pokemonId:Int = 1
 
-    fun sendRequests(){
+  /*  fun sendRequests(){
         repository.getPokemon(pokemonId).enqueue(object : Callback<Pokemon> {
             override fun onResponse(call: Call<Pokemon>, response: Response<Pokemon>) {
 
@@ -54,7 +54,7 @@ class PokemonViewModel @Inject constructor(val repository: Repository): ViewMode
 
         })
     }
-
+*/
 
 
 

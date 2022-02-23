@@ -1,5 +1,6 @@
 package com.example.pripremazarazgovor.repository
 
+import android.util.Log
 import com.example.pripremazarazgovor.models.NamedApiResourceList
 import com.example.pripremazarazgovor.models.Pokemon
 import com.example.pripremazarazgovor.models.PokemonSpecies
@@ -10,17 +11,26 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val retrofit: Connect) {
 
-    fun getPokemons(
+   suspend fun getPokemonsNamedApiList(
         offset:Int,
         limit:Int
-    ):Call<NamedApiResourceList>{
-        return retrofit.retrofitApiInterface.getListOfPokemons(offset,limit)
+    ):  NamedApiResourceList? {
+           val data = retrofit.retrofitApiInterface.getListOfPokemons(offset,limit).execute()
+            if (data.isSuccessful) {
+                return data.body()
+            }
+        return null
     }
 
-    fun getPokemon(
+    suspend fun getPokemon(
         id:Int
-    ):Call<Pokemon>{
-return retrofit.retrofitApiInterface.getPokemon(id)
+    ):Pokemon?{
+        val data = retrofit.retrofitApiInterface.getPokemon(id).execute()
+        if (data.isSuccessful){
+            return  data.body()
+        }
+        return null
+
     }
 
 
