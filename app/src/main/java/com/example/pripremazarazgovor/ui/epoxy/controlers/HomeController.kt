@@ -1,5 +1,6 @@
 package com.example.pripremazarazgovor.ui.epoxy.controlers
 
+import android.util.Log
 import android.view.View
 import com.airbnb.epoxy.EpoxyController
 import com.example.pripremazarazgovor.ui.epoxy.callBack.HomeCallBack
@@ -17,8 +18,9 @@ class HomeController(val callBack:HomeCallBack):EpoxyController(){
 
 
     override fun buildModels() {
-
+        Log.d("epoxy","REBILD")
         pokemons.forEach {
+            Log.d("epoxy test","${it.id} ${it.name}")
             pokemon {
                 id(it.id)
                 name(it.name)
@@ -28,6 +30,9 @@ class HomeController(val callBack:HomeCallBack):EpoxyController(){
                 if (it.types.size > 1){
                     type2(it.types[1].type.name)
                 }
+                clickListener(View.OnClickListener {view->
+                    this@HomeController.callBack.onPokemonTouch(it.id)
+                })
             }
         }
 

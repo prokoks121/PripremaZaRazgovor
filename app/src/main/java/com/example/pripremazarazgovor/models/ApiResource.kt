@@ -57,6 +57,6 @@ data class PokemonSpecies(
     val gender_rate:Int,
     val egg_groups:List<NamedApiResource>,
     val evolution_chain:ApiResource,
-    val evolves_from_species:NamedApiResource,
+    val evolves_from_species:NamedApiResource?,
     val growth_rate:NamedApiResource
 )

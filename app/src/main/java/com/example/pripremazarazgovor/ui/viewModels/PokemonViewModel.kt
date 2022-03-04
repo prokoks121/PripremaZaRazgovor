@@ -2,6 +2,7 @@ package com.example.pripremazarazgovor.ui.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.pripremazarazgovor.models.Pokemon
 import com.example.pripremazarazgovor.models.PokemonSpecies
 import com.example.pripremazarazgovor.repository.Repository
@@ -30,19 +31,21 @@ class PokemonViewModel @Inject constructor(private val repository: Repository): 
 
    fun sendRequests(){
 
-       CoroutineScope(Dispatchers.IO).launch {
-
-               val newPokemon = repository.getPokemon(pokemonId)
-               newPokemon?.let {
-                   withContext(Dispatchers.Main){
-                       pokemon.value = it
+       viewModelScope.launch {
+        withContext(Dispatchers.IO){
+            val newPokemon = repository.getPokemon(pokemonId)
+            newPokemon?.let {
+                withContext(Dispatchers.Main){
+                    pokemon.value = it
+                }
+            }
+        }
+           withContext(Dispatchers.IO) {
+               val newPokemonSpecies = repository.getPokemonSpecies(pokemonId)
+               newPokemonSpecies?.let {
+                   withContext(Dispatchers.Main) {
+                       pokemonSpecies.value = it
                    }
-               }
-
-           val newPokemonSpecies = repository.getPokemonSpecies(pokemonId)
-           newPokemonSpecies?.let {
-               withContext(Dispatchers.Main){
-                   pokemonSpecies.value = it
                }
            }
 

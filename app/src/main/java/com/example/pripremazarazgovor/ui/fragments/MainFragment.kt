@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.example.pripremazarazgovor.R
@@ -34,17 +35,16 @@ class MainFragment : Fragment(),HomeCallBack {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val epoxyController = HomeController(this)
-        sortButton = view.findViewById(R.id.sortButton)
-
-        viewModel.listOfPokemons.observe(viewLifecycleOwner) {
-            epoxyController.pokemons = it
-            Log.d("Provera",it.size.toString())
-        }
-
-        viewModel.updateListOfPokemons()
-
         val recycle = view.findViewById<EpoxyRecyclerView>(R.id.homeRecycle)
         val layoutManager = GridLayoutManager(requireContext(),2)
+        sortButton = view.findViewById(R.id.sortButton)
+        if (viewModel.listOfPokemons.value?.isEmpty() == true){
+            viewModel.updateListOfPokemons()
+        }
+        viewModel.listOfPokemons.observe(viewLifecycleOwner) {
+            epoxyController.pokemons = it
+        }
+
         recycle.layoutManager = layoutManager
         recycle.setController(epoxyController)
 
@@ -56,6 +56,12 @@ class MainFragment : Fragment(),HomeCallBack {
 
     override fun getMore() {
         viewModel.updateListOfPokemons()
+    }
+
+    override fun onPokemonTouch(id:Int) {
+        val action = MainFragmentDirections.actionMainFragment3ToPokemonFragment(id)
+        findNavController().navigate(action)
+
     }
 
 

@@ -6,6 +6,7 @@ import android.graphics.drawable.GradientDrawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.epoxy.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
@@ -30,6 +31,10 @@ lateinit var color:String
 @EpoxyAttribute
 lateinit var pokemonId:String
 
+@EpoxyAttribute
+lateinit var clickListener:View.OnClickListener
+
+
     override fun bind(holder: ViewHolder) {
         holder.name.text = name
         holder.type.text = type
@@ -37,9 +42,12 @@ lateinit var pokemonId:String
         holder.drawable.setColor(Color.parseColor(color))
         if(type2 != null){
             holder.type2.text = type2
+            holder.type2.visibility = View.VISIBLE
         }else{
             holder.type2.visibility = View.GONE
         }
+
+        holder.layout.setOnClickListener(clickListener)
     }
 
 
@@ -52,6 +60,7 @@ lateinit var pokemonId:String
         lateinit var img:ImageView
         lateinit var glide: RequestManager
         lateinit var drawable:GradientDrawable
+        lateinit var layout:ConstraintLayout
         override fun bindView(itemView: View) {
             name = itemView.findViewById(R.id.PokemonName)
             type = itemView.findViewById(R.id.pokemonType)
@@ -59,6 +68,7 @@ lateinit var pokemonId:String
             drawable = itemView.background as GradientDrawable
             glide = Glide.with(itemView)
             type2 = itemView.findViewById(R.id.pokemonType2)
+            layout = itemView.findViewById(R.id.pokemonCard)
 
         }
 

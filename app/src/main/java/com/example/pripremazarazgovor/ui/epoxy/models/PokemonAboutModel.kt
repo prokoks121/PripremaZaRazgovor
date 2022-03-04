@@ -1,6 +1,7 @@
 package com.example.pripremazarazgovor.ui.epoxy.models
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyAttribute
@@ -40,6 +41,8 @@ abstract class PokemonAboutModel:EpoxyModelWithHolder<PokemonAboutModel.ViewHold
 
 
     }
+
+
 
     inner class ViewHolder:EpoxyHolder(){
         lateinit var specs:TextView

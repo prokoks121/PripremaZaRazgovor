@@ -1,16 +1,17 @@
 package com.example.pripremazarazgovor.ui.epoxy.models
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.view.View
+import android.view.animation.BounceInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.airbnb.epoxy.EpoxyAttribute
-import com.airbnb.epoxy.EpoxyHolder
-import com.airbnb.epoxy.EpoxyModelClass
-import com.airbnb.epoxy.EpoxyModelWithHolder
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
+import com.airbnb.epoxy.*
 import com.example.pripremazarazgovor.R
 import com.example.pripremazarazgovor.models.Pokemon
-import com.example.pripremazarazgovor.models.PokemonSpecies
+
 
 @SuppressLint("NonConstantResourceId")
 @EpoxyModelClass(layout = R.layout.pokemon_stats)
@@ -18,6 +19,9 @@ abstract class PokemonStatsModel:EpoxyModelWithHolder<PokemonStatsModel.ViewHold
 
     @EpoxyAttribute
     lateinit var pokemon:Pokemon
+
+    @EpoxyAttribute
+    var progressBarAnimationStart = false
 
 
 
@@ -32,15 +36,30 @@ abstract class PokemonStatsModel:EpoxyModelWithHolder<PokemonStatsModel.ViewHold
         holder.speed.text = pokemon.stats[5].base_stat.toString()
         holder.total.text = "500"
 
-        holder.hpProgress.setProgress(pokemon.stats[0].base_stat,true)
-        holder.attackProgress.setProgress(pokemon.stats[1].base_stat,true)
-        holder.defenseProgress.setProgress(pokemon.stats[2].base_stat,true)
-        holder.spAtkProgress.setProgress(pokemon.stats[3].base_stat,true)
-        holder.spDefProgress.setProgress(pokemon.stats[4].base_stat,true)
-        holder.speedProgress.setProgress(pokemon.stats[5].base_stat,true)
-        holder.totalProgress.setProgress(500,true)
+        if (progressBarAnimationStart){
+            holder.hpProgress.smoothProgress(pokemon.stats[0].base_stat)
+            holder.attackProgress.smoothProgress(pokemon.stats[1].base_stat)
+            holder.defenseProgress.smoothProgress(pokemon.stats[2].base_stat)
+            holder.spAtkProgress.smoothProgress(pokemon.stats[3].base_stat)
+            holder.spDefProgress.smoothProgress(pokemon.stats[4].base_stat)
+            holder.speedProgress.smoothProgress(pokemon.stats[5].base_stat)
+            holder.totalProgress.smoothProgress(500)
+        }else{
+            holder.hpProgress.smoothProgress(0)
+            holder.attackProgress.smoothProgress(0)
+            holder.defenseProgress.smoothProgress(0)
+            holder.spAtkProgress.smoothProgress(0)
+            holder.spDefProgress.smoothProgress(0)
+            holder.speedProgress.smoothProgress(0)
+            holder.totalProgress.smoothProgress(0)
+        }
+    }
 
-
+    fun ProgressBar.smoothProgress(percent: Int){
+        val animation = ObjectAnimator.ofInt(this, "progress", percent)
+        animation.duration = 400
+        animation.interpolator = FastOutSlowInInterpolator()
+        animation.start()
     }
 
     inner class ViewHolder:EpoxyHolder(){
@@ -61,6 +80,8 @@ abstract class PokemonStatsModel:EpoxyModelWithHolder<PokemonStatsModel.ViewHold
         lateinit var spDefProgress:ProgressBar
         lateinit var speedProgress:ProgressBar
         lateinit var totalProgress:ProgressBar
+
+
 
 
 

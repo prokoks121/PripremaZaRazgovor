@@ -5,7 +5,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id("dagger.hilt.android.plugin")
-
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -59,6 +59,7 @@ dependencies {
     implementation "com.airbnb.android:epoxy:5.0.0-beta05"
     kapt "com.airbnb.android:epoxy-processor:5.0.0-beta05"
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
 }
 
 kapt {

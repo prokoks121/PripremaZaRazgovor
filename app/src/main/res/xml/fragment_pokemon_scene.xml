@@ -50,11 +50,12 @@
     <Transition
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@+id/start"
-        app:duration="300">
+        app:duration="100">
     <OnSwipe
         app:touchAnchorId="@id/constrainInfo"
         app:touchAnchorSide="top"
         app:dragDirection="dragUp"
-        />
+        app:maxAcceleration="10"
+        app:maxVelocity="1" />
     </Transition>
 </MotionScene>
