@@ -77,6 +77,7 @@
 
         <TextView
             android:id="@+id/pokemonType2"
+            app:visibilityMode="normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -86,10 +87,11 @@
             android:paddingTop="5dp"
             android:paddingRight="15dp"
             android:paddingBottom="5dp"
-            tools:text="Grass"
             android:textColor="#FFFFFF"
+            android:visibility="visible"
             app:layout_constraintStart_toEndOf="@+id/pokemonType"
-            app:layout_constraintTop_toBottomOf="@+id/pokemonName" />
+            app:layout_constraintTop_toBottomOf="@+id/pokemonName"
+            tools:text="Grass" />
 
         <TextView
             android:id="@+id/b"
@@ -114,7 +116,7 @@
             android:src="@drawable/ic_tackice"
             android:translationX="80dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pokemonType2"
+            app:layout_constraintTop_toBottomOf="@+id/pokemonType"
 
             />
 
@@ -128,17 +130,16 @@
             app:layout_constraintBottom_toTopOf="@id/constrainInfo"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/pokemonImg"
-            android:layout_width="0dp"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pokemonImgPager"
+            android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginTop="20dp"
             android:translationY="20dp"
             android:translationZ="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pokemonType2"
-            tools:srcCompat="@mipmap/ic_bablsor" />
+            app:layout_constraintTop_toBottomOf="@+id/pokemonType" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrainInfo"
@@ -148,7 +149,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pokemonImg">
+        app:layout_constraintTop_toBottomOf="@+id/pokemonImgPager">
 
 
         <com.google.android.material.tabs.TabLayout
@@ -163,29 +164,8 @@
         app:tabIndicatorColor="@color/purple_700"
         style="@style/MyCustomTabLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="About" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Base Stats" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Evolution" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moves" />
-    </com.google.android.material.tabs.TabLayout>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/epoxy"

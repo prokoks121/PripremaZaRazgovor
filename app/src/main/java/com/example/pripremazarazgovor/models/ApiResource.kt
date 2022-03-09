@@ -1,5 +1,7 @@
 package com.example.pripremazarazgovor.models
 
+import java.io.Serializable
+
 data class ApiResource(
     val url: String
 )

@@ -27,21 +27,34 @@ class PokemonViewModel @Inject constructor(private val repository: Repository): 
         MutableLiveData<PokemonSpecies>()
     }
 
-    var pokemonId:Int = 1
 
-   fun sendRequests(){
+    private var _pokemonId = 1
+    val pokemonId:Int
+        get() {
+       return _pokemonId
+    }
+
+    fun changePokemonId(id:Int){
+        _pokemonId = id
+    }
+
+
+    private var _imageDefaultCheck = true
+    val imageDefaultCheck:Boolean
+    get() {
+        return _imageDefaultCheck
+    }
+
+    fun disableImageCheck(){
+        _imageDefaultCheck = false
+    }
+
+
+   fun getSpecies(){
 
        viewModelScope.launch {
-        withContext(Dispatchers.IO){
-            val newPokemon = repository.getPokemon(pokemonId)
-            newPokemon?.let {
-                withContext(Dispatchers.Main){
-                    pokemon.value = it
-                }
-            }
-        }
            withContext(Dispatchers.IO) {
-               val newPokemonSpecies = repository.getPokemonSpecies(pokemonId)
+               val newPokemonSpecies = repository.getPokemonSpecies(pokemonId+1)
                newPokemonSpecies?.let {
                    withContext(Dispatchers.Main) {
                        pokemonSpecies.value = it
@@ -56,5 +69,43 @@ class PokemonViewModel @Inject constructor(private val repository: Repository): 
 
 
 
+
+
+    val listOfPokemons by lazy {
+        MutableLiveData<ArrayList<Pokemon>>(arrayListOf())
+    }
+
+    fun getPokemons(){
+
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val pokemons =  arrayListOf<Pokemon>()
+                val namedApiResourceList = repository.getPokemonNamedApiList(offset, limit)
+                namedApiResourceList?.let { apiResourceList ->
+                    apiResourceList.results.forEach {
+                        val pokemon = repository.getPokemon(urlToId(it.url))
+                        pokemon?.let { poke ->
+                            pokemons.add(poke)
+                        }
+                    }
+                    withContext(Dispatchers.Main) {
+                        listOfPokemons.value = pokemons
+                    }
+                }
+
+                //offset += limit
+                //offset++
+            }
+        }
+
+    }
+
+    private var offset = 0
+    private val limit = 10
+
+
+    private fun urlToId(url: String): Int {
+        return "/-?[0-9]+/$".toRegex().find(url)!!.value.filter { it.isDigit() || it == '-' }.toInt()
+    }
 
 }

@@ -9,20 +9,28 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pokemonImg"
+            app:layout_constraintTop_toBottomOf="@id/pokemonImgPager"
             android:background="@drawable/pokemon_group_shape"
             />
-        <Constraint  android:id="@id/pokemonImg"
+        <Constraint  android:id="@id/pokemonImgPager"
             android:layout_width="0dp"
             android:layout_height="160dp"
-            app:layout_constraintTop_toBottomOf="@id/pokemonType2"
+            app:layout_constraintTop_toBottomOf="@id/pokemonType"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:translationY="20dp"
             android:translationZ="1dp"
+            android:nestedScrollingEnabled="true"
+
             android:layout_marginTop="20dp"
 
         />
+        <Constraint android:id="@+id/pokemonType2">
+            <PropertySet
+                android:visibility="gone"
+                app:visibilityMode="ignore" />
+        </Constraint>
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -35,13 +43,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokemonType"  />
-        <Constraint android:id="@id/pokemonImg"
+        <Constraint android:id="@id/pokemonImgPager"
             android:layout_width="wrap_content"
             android:layout_height="160dp"
             android:src="@mipmap/ic_bablsor"
             android:translationY="40dp"
             android:translationZ="1dp"
-            android:layout_marginEnd="30dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintStart_toEndOf="@+id/pokemonName"
             app:layout_constraintBottom_toTopOf="@id/constrainInfo"
             app:layout_constraintEnd_toEndOf="parent"
             />
